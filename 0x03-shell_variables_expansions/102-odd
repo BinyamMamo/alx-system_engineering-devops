@@ -1,2 +1,2 @@
 #!/bin/bash
-perl -lne "echo if $. % 2==1"
+paste - - | cut -f1
