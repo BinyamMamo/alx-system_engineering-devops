@@ -1,4 +1,2 @@
 #!/bin/bash
-printf "Hello " > userr
-whoami >> userr
-cat userr
+cat hello userr
