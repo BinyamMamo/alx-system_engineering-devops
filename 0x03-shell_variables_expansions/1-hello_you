@@ -1,2 +1,4 @@
 #!/bin/bash
-sudo echo "hello " < $USER
+printf "Hello " > userr
+whoami >> userr
+cat userr
