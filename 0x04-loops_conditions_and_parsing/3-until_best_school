@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# uses until loop to print Best School 10 times
+x=1
+until [ $x -gt 10 ]
+do
+	echo "Best School"
+	x=$(( x + 1 ))
+done
