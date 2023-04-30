@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# displays Best School ten times and says bad luck if the count reaches 4 and good luck if count reaches 8	
+x=1
+while [ $x -le 10 ]
+do
+	if ((x == 4))
+	then
+		echo "bad luck"
+	elif [$x -eq 8]
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	x=$(( x + 1 ))
+done
