@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# displays numbers from 1 to 20 and says bad luck from China, Japan and Italy for the numbers 4, 9 and 17 respectively
+x=1
+while [ $x -le 20 ]
+do
+	echo "&i"
+	if ((x == 4))
+	then
+		echo "bad luck from China"
+	 elif [ $x -eq 9 ]
+        then	elif [ $x -eq 17 ]
+                echo "bad luck from Japan"
+	then
+		echo "bad luck from Italy"
+	fi
+	x=$(( x + 1 ))
+done
