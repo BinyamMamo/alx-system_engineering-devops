@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+chmod a+x *
+git add --all
+git commit -m"commit on $(date)."
+git push origin
+
