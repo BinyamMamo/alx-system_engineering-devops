@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-	# displays hour and minute
+# displays hour and minute
 i=0
 while [ $i -le 12 ]
 do
