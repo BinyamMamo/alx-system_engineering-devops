@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# does ls in a different way
+
+for line in $(ls -1)
+do
+	echo "$(echo $line | cut -d '-' -f 2)"
+done
+
