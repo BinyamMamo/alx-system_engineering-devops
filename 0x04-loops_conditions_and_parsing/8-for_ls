@@ -3,6 +3,6 @@
 
 for line in *
 do
-	echo "$(echo $line | cut -d '-' -f 2)"
+	echo $line | cut -d '-' -f 2
 done
 
