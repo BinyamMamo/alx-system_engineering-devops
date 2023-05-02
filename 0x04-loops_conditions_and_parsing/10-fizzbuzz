@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
-# fizz buzz
+# This script displays numbers from 1 to 100.
 
-i=1
-while [ $i -le 100 ]
+for number in {1..100}
 do
-	if (( i % 15 == 0 )); then
-		echo "FizzBuzz"
-	elif (( i % 3 == 0 )); then
-		echo "Fizz"
-	elif (( i % 5 == 0 )); then
-		echo "Buzz"
-	else
-		echo "$i"
-	fi
-	i=$((i + 1))
+    if [ $((number % 3)) == 0 ] && [ $((number % 5)) == 0 ]
+    then
+        echo "FizzBuzz"
+    elif [ $((number % 5)) == 0 ]
+    then
+        echo "Buzz"
+    elif [ $((number % 3)) == 0 ]
+    then
+        echo "Fizz"
+    else
+        echo "$number"
+    fi
 done
-
