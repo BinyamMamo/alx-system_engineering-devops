@@ -5,7 +5,7 @@ package { 'pgrep':
 package { 'pkill':
   ensure => installed,
 }
-exec { 'kill_me_now':
-  command => ['/usr/bin/pkill', 'killmenow'],
+exec { 'killmenow':
+  command => 'pkill killmenow',
   onlyif  => 'pgrep killmenow',
 }
