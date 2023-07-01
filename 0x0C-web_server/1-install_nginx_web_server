@@ -14,7 +14,9 @@ sudo printf %s "http {
             listen 80;
             root /etc/nginx/html;
         }
-}" > "/etc/nginx/nginx.conf"
+}
+
+events {}" > "/etc/nginx/nginx.conf"
 
 sudo nginx -s reload
 
