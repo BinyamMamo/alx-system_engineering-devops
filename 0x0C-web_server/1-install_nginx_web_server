@@ -21,4 +21,6 @@ printf %s "http {
 }
 events {}" | sudo tee /etc/nginx/nginx.conf
 
-service nginx restart
+sudo nginx
+
+curl localhost:80
