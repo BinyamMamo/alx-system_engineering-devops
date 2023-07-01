@@ -4,14 +4,14 @@
 sudo apt-get update
 sudo apt-get install nginx -y
 
-sudo ufw enable
-sudo ufw allow 'Nginx HTTP'
+# sudo ufw enable
+# sudo ufw allow 'Nginx HTTP'
 
 sudo nginx
 
 mkdir "/etc/nginx/html"
 echo "Hello World!" > "/etc/nginx/html/index.html"
-echo "http {
+printf %s "http {
         server {
             listen 80;
             root /etc/nginx/html;
