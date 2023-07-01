@@ -6,6 +6,6 @@ package { 'pkill':
   ensure => installed,
 }
 exec { 'killmenow':
-  command => 'pkill killmenow',
+  command => 'pkill -f killmenow',
   onlyif  => 'pgrep killmenow',
 }
