@@ -4,19 +4,22 @@
 sudo apt-get update
 sudo apt-get install nginx -y
 
-# sudo ufw enable
-# sudo ufw allow 'Nginx HTTP'
+sudo ufw enable
+sudo ufw allow 'Nginx HTTP'
 
 sudo mkdir /etc/nginx/html
 sudo touch /etc/nginx/html/index.html
+sudo chmod 777 /etc/nginx/html/index.html
 sudo echo "Hello World!" > /etc/nginx/html/index.html
+
+sudo chmod 777 /etc/nginx/nginx.conf
 sudo printf %s "http {
         server {
             listen 80;
             root /etc/nginx/html;
         }
 }
-events {}" > "/etc/nginx/nginx.conf"
+events {}" > /etc/nginx/nginx.conf
 
 sudo nginx -s reload
 
