@@ -1,3 +1,23 @@
 #!/usr/bin/env bash
 # listens on port 80
-curl 52.91.128.112:80
+
+sudo apt-get update
+sudo apt-get install nginx -y
+
+sudo ufw enable
+sudo ufw allow 'Nginx HTTP'
+
+sudo nginx
+
+mkdir "/etc/nginx/html"
+echo "Hello World!" > "/etc/nginx/html/index.html"
+echo "http {
+        server {
+            listen 80;
+            root /etc/nginx/html;
+        }
+}" > "/etc/nginx/nginx.conf"
+
+sudo nginx -s reload
+
+curl localhost:80
