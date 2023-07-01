@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # listens on port 80
 
-sudo apt-get update
+sudo apt-get update -y
 sudo apt-get install nginx -y
 
-sudo ufw enable
-sudo ufw allow 'Nginx HTTP'
+sudo ufw enable -y
+sudo ufw allow 'Nginx HTTP' -y
 
 sudo mkdir /etc/nginx/html
 sudo touch /etc/nginx/html/index.html
