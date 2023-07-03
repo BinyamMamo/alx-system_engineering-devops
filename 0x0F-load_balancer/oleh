@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+sed -i "34i\ # custom configurations" ./hello
+sed -i "34i\/\n\tlocation /redirect_me {\n\t\treturn 301 https://youtu.be/dQw4w9WgXcQ;\n\t}\n" ./hello
+sed -i "34i\/\n\terror_page 404 /404error.html;\n\tlocation = /404error.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n" ./hello
+sed -i "34i\/\n\tadd_header X-Served-By $hostname;\n" ./hello
