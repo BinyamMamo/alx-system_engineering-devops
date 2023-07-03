@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
-# configures an Ubuntu machine with nginx
+# adds configuration to an ubuntu server to acheive requirements
+
 FILE="/etc/nginx/sites-available/default"
-ERRORFILE="/usr/share/nginx/html/404error.html"
+ERROR_FILE="/usr/share/nginx/html/404error.html"
 
 REDIRECT="\n\tlocation /redirect_me {\n\t\treturn 301 https://youtu.be/dQw4w9WgXcQ;\n\t}\n"
-ERRORREDIRECT="\n\terror_page 404 /404error.html;\n\tlocation = /404error.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n"
-CUSTOMHEADER='\n\tadd_header X-Served-By $hostname;\n'
-
-STRING="Hello World!"
-FOUR="Ceci n'est pas une page"
+ERROR_REDIRECT="\n\terror_page 404 /404error.html;\n\tlocation = /404error.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n"
+CUSTOM_HEADER='\n\tadd_header X-Served-By $hostname;\n'
 
 apt-get -y update
 apt-get -y install nginx
+
 ufw allow 'Nginx HTTP'
-echo "$STRING" > /var/www/html/index.nginx-debian.html
+
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > "$ERROR_FILE"
+
 sed -i "37i\ $REDIRECT" "$FILE"
+sed -i "37i\ $ERROR_REDIRECT" "$FILE"
+sed -i "37i\ $CUSTOM_HEADER" "$FILE"
 
-echo "$FOUR" > "$ERRORFILE"
-sed -i "37i\ $ERRORREDIRECT" "$FILE"
-
-sed -i "37i\ $CUSTOMHEADER" "$FILE"
 service nginx restart
