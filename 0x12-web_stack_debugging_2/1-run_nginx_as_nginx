@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# stops apache
+pkill apache2
+
+# makes the config file read-only for group users and others(geusts) 
+chmod 644 /etc/nginx/nginx.conf
+
+# changes the user to nginx and listens on port 8080 instead of 80
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+
+# starts the nginx server
+sudo -u nginx service nginx start
