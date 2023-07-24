@@ -25,8 +25,8 @@ todos = extract(f"user/{uid}" + f"/todos?completed=true")
 done = len(todos)
 
 user = extract(f"users/{uid}")
-u_name = user['name']
+employee_name = user['name']
 
-print("Employee", u_name, f"is done with tasks({done}/{total}):")
+print("Employee", employee_name, f"is done with tasks({done}/{total}):")
 for task in todos:
     print("\t", task['title'])
