@@ -14,6 +14,7 @@ def extract(end_point):
     base_uri = "https://jsonplaceholder.typicode.com/"
     return requests.get(base_uri + end_point).json()
 
+
 if __name__ == "__main__":
     todo_dict = {}
     users = extract("users")

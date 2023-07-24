@@ -7,6 +7,7 @@ import requests
 from sys import argv
 import json
 
+
 def extract(end_point):
     """return the response object from the GET request
         made to the specified endpoint

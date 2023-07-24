@@ -5,12 +5,14 @@
 import requests
 from sys import argv
 
+
 def extract(end_point):
     """return the response object from the GET request
         made to the specified endpoint
     """
     base_uri = "https://jsonplaceholder.typicode.com/"
     return requests.get(base_uri + end_point).json()
+
 
 if __name__ == "__main__":
     # user id received from the argument
