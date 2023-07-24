@@ -16,7 +16,7 @@ def extract(end_point):
     return requests.get(base_uri + end_point).json()
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     # user id received from the argument
     uid = argv[1]
 
