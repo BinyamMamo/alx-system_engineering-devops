@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""retrieves and displays the completed tasks of a user
-    specified by their ID as an argument
 """
+Extracts a user's todos from a JSON API and saves them in a JSON file.
+"""
+
 import requests
 from sys import argv
 import json
