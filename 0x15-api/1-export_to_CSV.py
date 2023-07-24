@@ -3,9 +3,9 @@
 Extracts a user's to-do list from a JSON API and saves it as a CSV file.
 """
 
+from csv import DictWriter, QUOTE_ALL
 import requests
 from sys import argv
-from csv import DictWriter, QUOTE_ALL
 
 
 def extract(end_point):

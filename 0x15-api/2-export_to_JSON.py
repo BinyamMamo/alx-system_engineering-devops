@@ -3,9 +3,9 @@
 Extracts a user's todos from a JSON API and saves them in a JSON file.
 """
 
+import json
 import requests
 from sys import argv
-import json
 
 
 def extract(end_point):

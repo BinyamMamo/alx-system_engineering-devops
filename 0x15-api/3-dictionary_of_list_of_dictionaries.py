@@ -3,8 +3,8 @@
 Extracts todo tasks for each user from a REST API
 and saves them in a JSON file.
 """
-import requests
 import json
+import requests
 
 
 def extract(end_point):
