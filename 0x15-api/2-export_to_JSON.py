@@ -31,4 +31,4 @@ if __name__ == "main":
         todo_list.append(todo)
 
     with open(f"{uid}.json", 'w', newline='') as f:
-        json.dump({'2': todo_list}, f)
+        json.dump({f'{uid}': todo_list}, f)
