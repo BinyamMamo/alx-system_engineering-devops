@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""extracts a user's to-do list from a JSON API and saves it as a CSV file.
+"""
+Extracts a user's to-do list from a JSON API and saves it as a CSV file.
 """
 import requests
 from sys import argv
