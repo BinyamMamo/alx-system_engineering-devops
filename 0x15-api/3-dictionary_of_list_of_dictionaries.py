@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""retrieves and displays the completed tasks of a user
-    specified by their ID as an argument
+"""extracts todo tasks for each user from a REST API
+    and saves them in a JSON file.
 """
 import requests
 import json
@@ -13,6 +13,7 @@ def extract(end_point):
     base_uri = "https://jsonplaceholder.typicode.com/"
     return requests.get(base_uri + end_point).json()
 
+
 # current user's id
 todo_dict = {}
 users = extract("users")
@@ -22,9 +23,9 @@ for user in users:
     todos = extract(f"user/{uid}/todos")
     for task in todos:
         todo = {
-            "task" : task['title'],
-            "completed" : task['completed'],
-            "username" : user['username']
+            "task": task['title'],
+            "completed": task['completed'],
+            "username": user['username']
         }
         todo_list.append(todo)
     todo_dict[uid] = todo_list

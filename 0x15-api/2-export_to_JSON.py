@@ -23,11 +23,11 @@ todos = extract(f"user/{uid}/todos")
 todo_list = []
 for task in todos:
     todo = {
-        "task" : task['title'],
-        "completed" : task['completed'],
-        "username" : extract(f"users/{uid}")['username']
+        "task": task['title'],
+        "completed": task['completed'],
+        "username": extract(f"users/{uid}")['username']
     }
     todo_list.append(todo)
 
 with open(f"{uid}.json", 'w', newline='') as f:
-    json.dump({'2' : todo_list}, f)
+    json.dump({'2': todo_list}, f)

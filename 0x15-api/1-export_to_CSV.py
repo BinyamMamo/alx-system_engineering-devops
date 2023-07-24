@@ -22,10 +22,10 @@ todos = extract(f"user/{uid}/todos")
 todo_list = []
 for task in todos:
     todo = {
-        "user_id" : uid,
-        "username" : extract(f"users/{uid}")['username'],
-        "status" : task['completed'],
-        "title" : task['title']
+        "user_id": uid,
+        "username": extract(f"users/{uid}")['username'],
+        "status": task['completed'],
+        "title": task['title']
     }
     todo_list.append(todo)
 
