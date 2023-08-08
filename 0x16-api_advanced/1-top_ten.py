@@ -20,11 +20,12 @@ def top_ten(subreddit):
 
     resp = requests.get(url, headers=headers, allow_redirects=False)
 
-    if resp.status_code == 404:
+    if resp.status_code == 200:
+        result = resp.json()
+        result = result["data"]["children"]
+        i = 0
+        while i < 10 and i < len(result):
+            print(result[i]["data"]["title"])
+            i = i + 1
+    else:
         print("None")
-    result = resp.json()
-    result = result["data"]["children"]
-    i = 0
-    while i < 10:
-        print(result[i]["data"]["title"])
-        i = i + 1
