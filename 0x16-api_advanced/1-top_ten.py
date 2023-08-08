@@ -5,6 +5,7 @@ Retrieves the top 10 hot posts from a given subreddit using the Reddit API.
 
 import requests
 
+
 def top_ten(subreddit):
     """
     retrieves the top 10 posts from a subreddit
