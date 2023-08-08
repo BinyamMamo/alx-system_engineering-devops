@@ -6,6 +6,7 @@ subreddit using the Reddit API.
 
 import requests
 
+
 def recurse(subreddit, hot_list=[], after=None):
     """
     returns a list of titles of hot posts from a given subreddit
