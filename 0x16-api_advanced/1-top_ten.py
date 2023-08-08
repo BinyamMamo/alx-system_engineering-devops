@@ -1,8 +1,16 @@
 #!/usr/bin/python3
+"""
+Retrieves the top 10 hot posts from a given subreddit using the Reddit API.
+"""
 
 import requests
 
 def top_ten(subreddit):
+    """
+    retrieves the top 10 posts from a subreddit
+    @param subreddit - the name of the subreddit
+    @return None
+    """
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
 
     headers = {
@@ -17,5 +25,5 @@ def top_ten(subreddit):
     result = result["data"]["children"]
     i = 0
     while i < 10:
-        print(i + 1, " ", result[i]["data"]["title"])
+        print(result[i]["data"]["title"])
         i = i + 1
