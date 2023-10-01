@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# the following code will generate ssh key with name "school"
-ssh-keygen -b 4096 -N betty -t rsa -f school
