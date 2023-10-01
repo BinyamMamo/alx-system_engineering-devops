@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-# displays the whoami cmd as the user in arg
-sudo -u "$1" whoami
