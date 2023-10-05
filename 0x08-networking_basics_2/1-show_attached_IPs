@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# displays all IPV4 addresses
+
+hostname -I | cut -d' ' -f1 ; hostname -i
