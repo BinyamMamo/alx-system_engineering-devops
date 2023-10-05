@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-chmod a+x $1
+chmod a+x $@
