@@ -1,5 +1,9 @@
 # 0x0A. Configuration management
 
+<p align="left">
+    <img alt="JS sticker" width="75%" src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*j0RHN3oXzOfXWl7XeLzxZw.jpeg">
+</p>
+
 This project is about using Puppet as a configuration management tool to automate the installation and configuration of software and services on servers.
 
 ## Tasks
