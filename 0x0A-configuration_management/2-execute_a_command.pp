@@ -1,7 +1,12 @@
-# kill a a killme process
-
-exec { 'kill_killmenow_process':
-  command     => 'pkill killmenow',
-  path        => '/bin:/usr/bin',
-  refreshonly => true,
+# terminates a program after executing a command from puppet
+package { 'pgrep':
+  ensure => installed,
+}
+package { 'pkill':
+  ensure => installed,
+}
+exec { 'killmenow':
+  command => 'pkill -f killmenow',
+  path    => '/usr/bin/:/usr/local/bin/:/bin/',
+  onlyif  => 'pgrep killmenow',
 }
