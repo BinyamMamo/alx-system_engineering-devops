@@ -11,7 +11,7 @@ This project is about using Puppet as a configuration management tool to automat
 | Task | Files | Description |
 |------|-------|-------------|
 | 0. Create a file | [0-create_a_file.pp](./0-create_a_file.pp) | creates a file in `/tmp` with some content and permissions. |
-| 1. Install a package | [1-install_a_package.pp](./1-install_a_package.pp) | installs the `puppet-lint` package. |
+| 1. Install a package | [1-install_a_package.pp](./1-install_a_package.pp) | installs the `flask` package. |
 | 2. Execute a command | [2-execute_a_command.pp](./2-execute_a_command.pp) | kills a process named `killmenow`. |
 
 
