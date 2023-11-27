@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# transfers a file with scp
+scp -i $1 $4 $3@$2:~/
