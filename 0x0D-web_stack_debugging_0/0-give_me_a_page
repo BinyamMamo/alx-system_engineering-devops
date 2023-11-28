@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # runs Apache on a Docker container
-sudo echo "ServerName localhost" >> /etc/apache2.conf
+sudo echo "ServerName localhost" | tee /etc/apache2.conf
 sudo service apache2 start
