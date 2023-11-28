@@ -1,7 +1,22 @@
 # installs and configures nginx
 
+exec { 'apt-update':
+  command     => 'apt-get update',
+  path        => '/usr/bin',
+  refreshonly => true
+}
+
 package { 'nginx':
   ensure => installed
+}
+
+class { 'ufw':
+  allow  => ['ssh', 'http', 'Nginx HTTP'],
+}
+
+file { '/var/www/html/index.html':
+  ensure  => file,
+  content => 'Hello World'
 }
 
 file { '/etc/nginx/sites-available/redirect':
