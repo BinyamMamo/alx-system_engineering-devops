@@ -1,70 +1,24 @@
 # installs and configures nginx
 
-exec { 'apt-update':
-  command     => 'apt-get update',
-  path        => '/usr/bin',
-  refreshonly => true,
-  privileged  => true
+exec { 'update system':
+    command => '/usr/bin/apt-get update',
 }
 
 package { 'nginx':
-  ensure     => installed,
-  privileged => true
+	ensure  => 'installed',
+	require => Exec['update system']
 }
 
-class { 'ufw':
-  allow      => ['ssh', 'http', 'Nginx HTTP'],
-  privileged => true
+file {'/var/www/html/index.html':
+	content => 'Hello World!'
 }
 
-file { '/var/www/html/index.html':
-  ensure     => file,
-  content    => 'Hello World',
-  privileged => true
+exec {'redirect_me':
+	command  => 'sed -i "24i\	rewrite ^/redirect_me https://www.youtube.com/watch?v=xvFZjo5PgG0 permanent;" /etc/nginx/sites-available/default',
+	provider => 'shell'
 }
 
-file { '/etc/nginx/sites-available/redirect':
-  ensure     => file,
-  content    => "server {
-                listen 80;
-                server_name _;
-                location /redirect_me {
-                  return 301 /;
-                }
-              }",
-  privileged => true
-}
-
-file { '/etc/nginx/sites-available/default':
-  ensure     => file,
-  content    => "server {
-                listen 80;
-                server_name _;
-                location / {
-                  root /var/www/html;
-                  index index.html;
-                }
-              }",
-  privileged => true
-}
-
-file { '/etc/nginx/sites-enabled/redirect':
-  ensure     => link,
-  target     => '/etc/nginx/sites-available/redirect',
-  require    => File['/etc/nginx/sites-available/redirect'],
-  privileged => true
-}
-
-file { '/etc/nginx/sites-enabled/default':
-  ensure     => link,
-  target     => '/etc/nginx/sites-available/default',
-  require    => File['/etc/nginx/sites-available/default'],
-  privileged => true
-}
-
-service { 'nginx':
-  ensure     => running,
-  enable     => true,
-  require    => [File['/etc/nginx/sites-enabled/redirect'], File['/etc/nginx/sites-enabled/default']],
-  privileged => true
+service {'nginx':
+	ensure  => running,
+	require => Package['nginx']
 }
