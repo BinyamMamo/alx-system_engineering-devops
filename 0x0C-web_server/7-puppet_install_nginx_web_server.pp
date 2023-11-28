@@ -26,14 +26,14 @@ file { '/etc/nginx/sites-available/default':
 }
 
 file { '/etc/nginx/sites-enabled/redirect':
-  ensure => link,
-  target => '/etc/nginx/sites-available/redirect',
+  ensure  => link,
+  target  => '/etc/nginx/sites-available/redirect',
   require => File['/etc/nginx/sites-available/redirect'],
 }
 
 file { '/etc/nginx/sites-enabled/default':
-  ensure => link,
-  target => '/etc/nginx/sites-available/default',
+  ensure  => link,
+  target  => '/etc/nginx/sites-available/default',
   require => File['/etc/nginx/sites-available/default'],
 }
 
