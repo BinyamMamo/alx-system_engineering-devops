@@ -1,7 +1,7 @@
 # Attack is the Best Defense
 
 <P>
-<img width="100%" src="https://preview.redd.it/7hvs58an33e41.gif?width=930&auto=webp&s=fc2ed95a75ff66619765f2ba742c6ab504847cd2">
+<img width="100%" src="https://metro.co.uk/wp-content/uploads/2022/03/Cyberwarfare-is-the-battleground-of-the-21st-century-and-were-all-involved-BP-29e0.gif">
 </p>
 
 Welcome to "Attack is the Best Defense," a project that delves into the proactive side of cybersecurity. By understanding offensive techniques, we can better defend our systems. This project explores the concepts of network security and penetration testing. It focuses on two main tasks: ARP spoofing and sniffing unencrypted traffic, and performing a dictionary attack.
