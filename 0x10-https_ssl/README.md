@@ -1,7 +1,7 @@
 # 0x10. HTTPS SSL
 
 <p>
-<img width="75%" src="https://desk.zoho.com/support/ImageDisplay?downloadType=uploadedFile&fileName=lename*%3D%22UTF-8%27%27ssl-expiry-blog.gif&blockId=ff99121ae5644d8b23f11de9b5b8414034296830b37b327b&zgId=4d65b98622a455f6&mode=view">
+<img width="50%" src="https://desk.zoho.com/support/ImageDisplay?downloadType=uploadedFile&fileName=lename*%3D%22UTF-8%27%27ssl-expiry-blog.gif&blockId=ff99121ae5644d8b23f11de9b5b8414034296830b37b327b&zgId=4d65b98622a455f6&mode=view">
 </p>
 
 ## Introduction
