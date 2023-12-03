@@ -1,7 +1,7 @@
 # 0x0F. Load balancer
 
 <p>
-<img width="100%" style="filter: invert(88%);" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*0_AxDGA6rGF8ESMifA6j8w.gif">
+<img width="50%" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*0_AxDGA6rGF8ESMifA6j8w.gif">
 </p>
 
 ## Introduction
