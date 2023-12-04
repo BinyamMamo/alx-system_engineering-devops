@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# adds configuration to an ubuntu server to acheive requirements
+
+FILE="/etc/nginx/sites-available/default"
+ERROR_FILE="/usr/share/nginx/html/404error.html"
+
+REDIRECT="\n\tlocation /redirect_me {\n\t\treturn 301 https://youtu.be/xvFZjo5PgG0?si=sLe3_F75qIgskGCw;\n\t}\n"
+ERROR_REDIRECT="\n\terror_page 404 /404error.html;\n\tlocation = /404error.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n"
+CUSTOM_HEADER='\n\tadd_header X-Served-By $hostname;\n'
+
+apt-get update -y
+apt-get install nginx -y
+
+ufw allow 'Nginx HTTP'
+
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > "$ERROR_FILE"
+
+sed -i "37i\ $REDIRECT" "$FILE"
+sed -i "37i\ $ERROR_REDIRECT" "$FILE"
+sed -i "37i\ $CUSTOM_HEADER" "$FILE"
+
+service nginx restart

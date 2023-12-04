@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# fixes the symbolic link at /etc/sites-enabled & kills the process at the end
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx start
+kill "$(pgrep 'nginx' | head -1)"
