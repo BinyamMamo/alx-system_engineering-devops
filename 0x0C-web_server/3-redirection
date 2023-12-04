@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 # installs nginx and configures a redirect
 
-sudo apt-get update -y -qq
-sudo apt-get install nginx -y
+apt-get update -y -qq
+apt-get install nginx -y
 
 
-sudo service nginx start
-sudo ufw allow 'Nginx HTTP'
+service nginx start
+ufw allow 'Nginx HTTP'
 
 chown -R "$USER":"$USER" /var/www/html
-sudo chmod -R 755 /var/www
+chmod -R 755 /var/www
 
 echo -e "Hello World!" > /var/www/html/index.nginx-debian.html
 
-sudo sed -i '24i\	rewrite ^/redirect_me https://www.youtube.com/watch?v=xvFZjo5PgG0 permanent;' /etc/nginx/sites-available/default
+sed -i '24i\	rewrite ^/redirect_me https://www.youtube.com/watch?v=xvFZjo5PgG0 permanent;' /etc/nginx/sites-available/default
 
-sudo service nginx restart
+service nginx restart
