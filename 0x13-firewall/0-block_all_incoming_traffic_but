@@ -3,7 +3,7 @@
 apt-get install ufw -y
 sed -i 's/IPV6=.*/IPV6=yes/' /etc/default/ufw
 ufw disable
-ufw enable
+echo "y" | ufw enable
 ufw default allow outgoing
 ufw default deny incoming
 ufw allow 22/tcp
