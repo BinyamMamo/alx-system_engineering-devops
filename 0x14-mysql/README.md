@@ -8,8 +8,7 @@ This project is designed to provide a comprehensive understanding of MySQL, a wi
 
 | Task Name | Files Used | Brief Description |
 |-----------|------------|-------------------|
-| 0. Install MySQL | [4-mysql_configuration_primary](./4-mysql_configuration_primary),
-[4-mysql_configuration_replica](./4-mysql_configuration_replica) | Instructions on setting up MySQL on your server. |
+| 0. Install MySQL | [4-mysql_configuration_primary](./4-mysql_configuration_primary),  [4-mysql_configuration_replica](./4-mysql_configuration_replica) | Instructions on setting up MySQL on your server. |
 | 1. Let us in! | [create_user.sql](./create_user.sql) | Guide to creating a user and granting permissions. |
 | 2. If only you could see what I've seen with your eyes | [5-mysql_backup](./5-mysql_backup) | Steps to create a backup of your MySQL database. |
 | 3. Quite an experience to live in fear, isn't it? | [helpers/](helpers/) | Understanding the importance of replication and backup strategies. |
