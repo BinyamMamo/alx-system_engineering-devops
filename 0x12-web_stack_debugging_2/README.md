@@ -2,7 +2,7 @@
 
 ![" "](https://media1.tenor.com/m/ZA5nWPkUU7UAAAAC/linux-homer.gif)
 
-This project is part of the system engineering and DevOps track at ALX. It involves debugging a web stack to ensure proper functionality and performance.
+This project is part of the system engineering and DevOps track at ALX. It involves debugging a web stack to ensure proper functionality and performance. The project is focused on controlling users in action and ensuring that they have the necessary permissions to perform their tasks. The project also involves using the `sudo` command to run software as another user to troubleshoot permission issues.
 
 ## Tasks
 
