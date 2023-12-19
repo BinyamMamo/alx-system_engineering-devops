@@ -8,6 +8,6 @@ This project is part of the system engineering and DevOps track at ALX. It invol
 
 | Task Name | Files | Description |
 | --- | --- | --- |
-| 0. Run software as another user | [0-iamsomeoneelse](./0-iamsomeoneelse)      | This task involves running a software as a different user to troubleshoot permission issues. |
-| 1. Run Nginx as Nginx | [1-run_nginx_as_nginx](./1-run_nginx_as_nginx)      | The goal is to configure Nginx to run as the correct user for security and stability. |
-| 100. Fix in 7 lines or less | [100-fix_in_7_lines_or_less](./100-fix_in_7_lines_or_less)      | A challenge to fix an issue in a web stack with minimal code changes. |
+| 0. Run software as another user | [0-iamsomeoneelse](./0-iamsomeoneelse) | This task involves running a software as a different user to troubleshoot permission issues. |
+| 1. Run Nginx as Nginx | [1-run_nginx_as_nginx](./1-run_nginx_as_nginx) | The goal is to configure Nginx to run as the correct user for security and stability. |
+| 100. Fix in 7 lines or less | [100-fix_in_7_lines_or_less](./100-fix_in_7_lines_or_less) | A challenge to fix an issue in a web stack with minimal code changes. |
