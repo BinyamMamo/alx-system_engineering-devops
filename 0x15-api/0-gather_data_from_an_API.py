@@ -7,17 +7,15 @@ from sys import argv
 
 if __name__ == "__main__":
     id = argv[1]
-    base_url = "base_url"
+    base_url = "https://jsonplaceholder.typicode.com"
     ename = ""
     completed = []
     tasks = 0
 
-    with get(base_url + "/users/" + id) as response:
-        response = response.json()
+    with get(base_url + "/users/" + id).json() as response:
         ename = response["name"]
 
-    with get(base_url + "/todos?userId=" + id) as response:
-        response = response.json()
+    with get(base_url + "/todos?userId=" + id).json() as response:
         for r in response:
             if (r['completed']):
                 completed.append(r['title'])
