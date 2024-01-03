@@ -25,7 +25,7 @@ if __name__ == "__main__":
                         "task": task['title'],
                         "completed": task['completed']
                     })
-                tasks_json[user['id']] = tasks
+                tasks_json.update({user['id']: tasks})
 
     with open("todo_all_employees.json", 'w', newline='') as f:
         json.dump(tasks_json, f)
