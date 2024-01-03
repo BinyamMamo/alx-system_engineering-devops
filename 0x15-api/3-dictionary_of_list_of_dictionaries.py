@@ -10,22 +10,22 @@ import json
 
 
 if __name__ == "__main__":
-	tasks = []
-	tasks_json = {}
-	BASE_URL = "https://jsonplaceholder.typicode.com"
+    tasks = []
+    tasks_json = {}
+    BASE_URL = "https://jsonplaceholder.typicode.com"
 
-	with get(BASE_URL + "/users/") as response:
-		users = response.json()
-		for user in users:
-			with get(BASE_URL + "/todos?userId=" + str(user['id'])) as response:
-				todos = response.json()
-				for task in todos:
-					tasks.append({
-						"username": user['username'],
-						"task": task['title'],
-						"completed": task['completed']
-					})
-				tasks_json[user['id']] = tasks
-	
-	with open("todo_all_employees.json", 'w', newline='') as f:
-		json.dump(tasks_json, f)
+    with get(BASE_URL + "/users/") as response:
+        users = response.json()
+        for user in users:
+            with get(BASE_URL + f"/todos?userId={user['id']}") as response:
+                todos = response.json()
+                for task in todos:
+                    tasks.append({
+                        "username": user['username'],
+                        "task": task['title'],
+                        "completed": task['completed']
+                    })
+                tasks_json[user['id']] = tasks
+
+    with open("todo_all_employees.json", 'w', newline='') as f:
+        json.dump(tasks_json, f)
