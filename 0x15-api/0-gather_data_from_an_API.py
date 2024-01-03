@@ -1,15 +1,18 @@
 #!/usr/bin/python3
 """ gathers employee data form a REST api"""
+
 from requests import get
 from sys import argv
 
-base_url = "base_url"
-id = argv[1]
-ename = ""
-completed = []
-tasks = 0
 
 if __name__ == "__main__":
+
+    base_url = "base_url"
+    id = argv[1]
+    ename = ""
+    completed = []
+    tasks = 0
+
     with get(base_url + "/users/" + id) as response:
         response = response.json()
         ename = response["name"]
