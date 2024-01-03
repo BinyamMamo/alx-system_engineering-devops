@@ -26,4 +26,4 @@ if __name__ == "__main__":
     print("Employee {} is done with tasks({}/{}):".format(
                                 ename, len(completed), tasks))
     for task in completed:
-        print("\t{}".format(task))
+        print("    {}".format(task))
