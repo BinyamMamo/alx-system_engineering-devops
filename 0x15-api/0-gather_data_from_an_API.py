@@ -6,9 +6,8 @@ from sys import argv
 
 
 if __name__ == "__main__":
-
-    base_url = "base_url"
     id = argv[1]
+    base_url = "base_url"
     ename = ""
     completed = []
     tasks = 0
