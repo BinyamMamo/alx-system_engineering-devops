@@ -17,15 +17,16 @@ if __name__ == "__main__":
     with get(BASE_URL + "/users/") as response:
         users = response.json()
         for user in users:
-            with get(BASE_URL + f"/todos?userId={user['id']}") as response:
-                todos = response.json()
+            tasks = []
+            with get(BASE_URL + f"/todos?userId={user['id']}") as todos:
+                todos = todos.json()
                 for task in todos:
                     tasks.append({
                         "username": user['username'],
                         "task": task['title'],
                         "completed": task['completed']
                     })
-                tasks_json.update({user['id']: tasks})
+            tasks_json.update({user['id']: tasks})
 
     with open("todo_all_employees.json", 'w', newline='') as f:
         json.dump(tasks_json, f)
