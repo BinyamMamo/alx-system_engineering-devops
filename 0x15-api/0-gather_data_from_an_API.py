@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" gathers employee data form a REST api"""
 from requests import get
 from sys import argv
 
