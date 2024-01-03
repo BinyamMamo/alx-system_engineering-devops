@@ -12,10 +12,12 @@ if __name__ == "__main__":
     completed = []
     tasks = 0
 
-    with get(base_url + "/users/" + id).json() as response:
+    with get(base_url + "/users/" + id) as response:
+        response = response.json()
         ename = response["name"]
 
-    with get(base_url + "/todos?userId=" + id).json() as response:
+    with get(base_url + "/todos?userId=" + id) as response:
+        response = response.json()
         for r in response:
             if (r['completed']):
                 completed.append(r['title'])
