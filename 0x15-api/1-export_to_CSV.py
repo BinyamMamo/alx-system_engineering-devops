@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """
-Author: Binyam Mamo
 gathers employee data from api and exports it to csv file
 USAGE: 1-export_to_CSV.py $EMPLOYEE_ID
 """
