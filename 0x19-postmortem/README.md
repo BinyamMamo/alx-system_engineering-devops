@@ -1,6 +1,6 @@
 # Postmortem: How a Nginx server went down in flames 🔥
 
-![Server on Fire](assets/postmortem.png)
+![Server on Fire](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzV0c2EyZmM2ZmR1Y2xzNG03OGRxd2toZHVneTZodmFjdGE0a2NzOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P7JmDW7IkB7TW/giphy.gif)
 
 ## Issue Summary
 - **Duration**: 75 minutes of chaos from 9:00 AM to 10:15 AM GMT.
