@@ -1,7 +1,5 @@
 # Postmortem: How a Nginx server went down in flames 🔥
 
-![Server on Fire](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzV0c2EyZmM2ZmR1Y2xzNG03OGRxd2toZHVneTZodmFjdGE0a2NzOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P7JmDW7IkB7TW/giphy.gif)
-
 ![Server on Fire](assets/postmortem.png)
 
 ## Issue Summary
