@@ -1,6 +1,6 @@
 # 0x1A. Application server
 
-<img src="https://files.realpython.com/media/flask-nginx-gunicorn-architecture.012eb1c10f5e.jpg">
+<img src="https://files.realpython.com/media/flask-nginx-gunicorn-architecture.012eb1c10f5e.jpg" width="50%">
 
 This project is about installing an application server (gunicorn) on our own servers and serving dynamic content with it. The goal of this project is to add this piece to our infrastructure, plug it to Nginx and make it serve our Airbnb clone project.
 
