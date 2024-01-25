@@ -1,0 +1,33 @@
+# configures Nginx for web-01.binyammamo.tech
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        server_name web-01.binyammamo.tech;
+
+        add_header X-Served-By $hostname;
+        root /var/www/html;
+
+        error_page 404 /404error.html;
+        location = /404error.html {
+                root /usr/share/nginx/html;
+                internal;
+        }
+
+        location /redirect_me {
+                return 301 https://youtu.be/xvFZjo5PgG0?si=sLe3_F75qIgskGCw;
+        }
+
+        index index.html index.htm index.nginx-debian.html;
+
+        location / {
+                try_files $uri $uri/ =404;
+        }
+
+        location /hbnb_static {
+                alias /data/web_static/current;
+        }
+
+        location /airbnb-onepage/ {
+                proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+        }
+}
