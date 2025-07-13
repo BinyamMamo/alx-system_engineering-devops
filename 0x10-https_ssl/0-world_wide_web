@@ -1,18 +1,23 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # prints details about the subdomains of a provided domain
-# Usage: ./0-world_wide_web <domain> <subdomain>
 
 subdomains=( "www" "lb-01" "web-01" "web-02" )
 
 dominfo () {
-    record=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
-    echo "$2 $record" | awk '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
+    local domain="$1"
+    local subdomain="$2"
+    local output
+    output=$(dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:' | tail -n 1)
+    if [ -n "$output" ]; then
+        # shellcheck disable=SC2086
+        echo $subdomain $output | awk '{print "The subdomain " $1 " is a " $5 " record and points to " $6}'
+    fi
 }
 
 if [ $# -eq 1 ]; then
-	for sub in "${subdomains[@]}"; do
-		dominfo "$1" "$sub"
-	done
-elif [ "$#" -eq 2 ]; then
-  dominfo "$1" "$2"
+    for sub in "${subdomains[@]}"; do
+        dominfo "$1" "$sub"
+    done
+elif [ $# -eq 2 ]; then
+    dominfo "$1" "$2"
 fi
