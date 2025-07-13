@@ -1,19 +1,40 @@
 # 0x10. HTTPS SSL
 
-<p>
-<img width="50%" src="https://desk.zoho.com/support/ImageDisplay?downloadType=uploadedFile&fileName=lename*%3D%22UTF-8%27%27ssl-expiry-blog.gif&blockId=ff99121ae5644d8b23f11de9b5b8414034296830b37b327b&zgId=4d65b98622a455f6&mode=view">
-</p>
+This directory contains solutions for HTTPS SSL configuration tasks.
 
-## Introduction
-This project focuses on the implementation of HTTPS SSL to secure website traffic, ensuring data integrity and encryption between the client and the server. 
+## Learning Objectives
 
-## Tasks
+- Understanding HTTPS SSL and its 2 main roles
+- The purpose of encrypting traffic
+- What SSL termination means
+- Configuring domain zones and subdomains
+- Setting up HAProxy SSL termination
+- Redirecting HTTP traffic to HTTPS
 
-| Task | Files | Description |
-|------|-------|-------------|
-| 0. World wide web | [0-world_wide_web](./0-world_wide_web) | configures a domain zone to redirect to a web server. |
-| 1. HAproxy SSL termination | [1-haproxy_ssl_termination](./1-haproxy_ssl_termination) | sets up HAproxy to handle SSL termination. |
-| 2. No loophole in your website traffic | [100-redirect_http_to_https](./100-redirect_http_to_https) | redirects HTTP traffic to HTTPS to close any security loopholes. |
+## Files
 
+- **0-world_wide_web**: Bash script that displays information about subdomains using dig and awk
+- **1-haproxy_ssl_termination**: HAProxy configuration file for SSL termination on port 443
+- **100-redirect_http_to_https**: HAProxy configuration that redirects HTTP traffic to HTTPS with 301 status
 
-By taking actions similar to the above, we can ensure that our web infrastructure is robust against traffic snooping and data tampering, providing a secure browsing experience for users.
+## Requirements
+
+- All files interpreted on Ubuntu 16.04 LTS
+- All Bash scripts must be executable
+- Scripts must pass Shellcheck (version 0.3.7) without errors
+- First line: `#!/usr/bin/env bash`
+- Second line: Comment explaining the script
+
+## Usage
+
+### Task 0: World Wide Web
+```bash
+./0-world_wide_web holberton.online
+./0-world_wide_web holberton.online web-02
+```
+
+### Task 1: HAProxy SSL Termination
+Configure HAProxy to listen on port 443 and handle SSL traffic.
+
+### Task 2: HTTP to HTTPS Redirect
+Configure HAProxy to automatically redirect HTTP traffic to HTTPS with 301 status.
