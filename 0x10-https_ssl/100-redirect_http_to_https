@@ -1,30 +1,26 @@
 global
-    log     /dev/log local0
     maxconn 2048
-    user    haproxy
-    group   haproxy
+    user haproxy
+    group haproxy
     tune.ssl.default-dh-param 2048
 
 defaults
-    log     global
-    mode    http
-    option  httplog
-    option  dontlognull
-    retries 3
-    option  redispatch
-    timeout connect  5000
-    timeout client  10000
-    timeout server  10000
-    option  forwardfor
-    option  http-server-close
+    mode http
+    timeout connect 5000
+    timeout client 10000
+    timeout server 10000
+    option httplog
+    option dontlognull
+    option forwardfor
+    option http-server-close
 
 frontend www-frontend
-    bind   0.0.0.0:80
-    bind   0.0.0.0:443 ssl crt /etc/ssl/certs/www.binyammamo.tech.pem
+    bind 0.0.0.0:80
+    bind 0.0.0.0:443 ssl crt /etc/ssl/certs/www.binyammamo.tech.pem
     redirect scheme https code 301 if !{ ssl_fc }
     default_backend www-backend
 
 backend www-backend
-    balance  roundrobin
+    balance roundrobin
     server 213310-web-01 34.224.2.4:80 check
     server 213310-web-02 54.144.239.50:80 check
