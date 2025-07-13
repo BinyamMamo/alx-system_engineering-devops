@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 # prints details about the subdomains of a provided domain
 # Usage: ./0-world_wide_web <domain> <subdomain>
 
