@@ -33,7 +33,6 @@ frontend www-https
 
 backend www-backend
     balance  roundrobin
-    redirect scheme https if !{ ssl_fc }
     server 213310-web-01 34.224.2.4:80 check
     server 213310-web-02 54.144.239.50:80 check
 
